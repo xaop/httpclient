@@ -324,8 +324,10 @@ class HTTPClient
     # Thanks!
     # supported algorithm: MD5 only for now
     def calc_cred(method, uri, user, passwd, param)
+      url = uri.path
+      url = "#{url}?#{uri.query}" if uri.query
       a_1 = "#{user}:#{param['realm']}:#{passwd}"
-      a_2 = "#{method}:#{uri.path}"
+      a_2 = "#{method}:#{url}"
       nonce = param['nonce']
       cnonce = generate_cnonce()
       @nonce_count += 1

@@ -1,6 +1,6 @@
 require 'rubygems'
 SPEC = Gem::Specification.new do |s|
-  s.name = "httpclient"
+  s.name = "httpclient-xaop"
   s.version = "2.1.6"
   s.date = "2010-03-25"
   s.author = "NAKAMURA, Hiroshi"
